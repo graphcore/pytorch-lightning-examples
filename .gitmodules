@@ -1,0 +1,3 @@
+[submodule "applications/examples"]
+	path = applications/examples
+	url = https://github.com/graphcore/examples.git
