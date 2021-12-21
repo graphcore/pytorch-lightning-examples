@@ -3,6 +3,25 @@
 This example showcases a RNN-LSTM model running on the Graphcore IPU, with PyTorch Lightning.
 A custom mapping-style dataset is used which takes in a text file and splits it into chunks.
 
+## Setup
+To set up the script, first create a virtual environment and install the dependencies.
+Note that `--force-reinstall` is required to make sure the installed PyTorch version is compatible with both PopTorch and PyTorch Lightning:
+
+```console
+python3 -m venv shakespeare-venv
+source shakespeare-venv/bin/activate
+pip install -U pip
+pip install <path-to-poptorch-wheel>.whl
+pip install -r requirements.txt --force-reinstall
+```
+
+Now enable the Poplar SDK:
+
+```console
+source <path-to-poplar-sdk>/popart-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
+source <path-to-poplar-sdk>/poplar-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
+```
+
 ## Instructions
 Download the example Shakespeare text file from [the GitHub source](https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt) and name it as shakespeare.txt.
 

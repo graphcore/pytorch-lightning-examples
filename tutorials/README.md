@@ -2,6 +2,23 @@
 
 This directory contains some small code examples showing a series of concepts in a minimal amount of code.
 
+First prepare your environment to run PyTorch Lightning on IPU.
+Note that `--force-reinstall` is required to make sure the installed PyTorch version is compatible with both PopTorch and PyTorch Lightning:
+
+```console
+python3 -m venv tutorials-venv
+source tutorials-venv/bin/activate
+pip3 install -U pip
+pip3 install <path-to-poptorch-wheel>.whl
+pip3 install -r requirements.txt
+```
+
+Now enable the Poplar SDK:
+
+```console
+source <path-to-poplar-sdk>/popart-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
+source <path-to-poplar-sdk>/poplar-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
+```
 
 Each example can be run as follows:
 

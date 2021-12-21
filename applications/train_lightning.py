@@ -111,7 +111,7 @@ def get_optimizer(opts, model):
     if opts.optimizer == 'sgd':
         optimizer = SGD(params, lr=opts.lr, momentum=opts.momentum, loss_scaling=opts.initial_loss_scaling)
     elif opts.optimizer == 'sgd_combined':
-        optimizer = SGD(params, lr=opts.lr, momentum=opts.momentum, loss_scaling=opts.initial_loss_scaling, velocity_scaling=opts.initial_loss_scaling / opts.loss_velocity_scaling_ratio, use_combined_accum=True)
+        optimizer = SGD(params, lr=opts.lr, momentum=opts.momentum, loss_scaling=opts.initial_loss_scaling, velocity_scaling=opts.initial_loss_scaling, use_combined_accum=True)
     elif opts.optimizer == 'adamw':
         optimizer = AdamW(params, lr=opts.lr, loss_scaling=opts.initial_loss_scaling, eps=opts.optimizer_eps)
     elif opts.optimizer == 'rmsprop':
@@ -157,7 +157,7 @@ if __name__ == '__main__':
     model_opts = utils.train_settings(run_opts, model_opts)
     lr_scheduler = get_lr_scheduler(run_opts, optimizer, len(train_data))
 
-    validation_opts = create_validation_opts(run_opts)
+    validation_opts = create_validation_opts(run_opts, run_opts.use_popdist)
 
     test_data = None
     if run_opts.validation_mode != "none":

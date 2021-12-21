@@ -4,12 +4,30 @@ This directory contains a PyTorch Lightning port of the [PyTorch CNNs training a
 
 It can be used to verify that the same performance is obtained with PyTorch Lightning as when running directly in PopTorch.
 
+First prepare your environment to run PyTorch Lightning on IPU.
+Note that `--force-reinstall` is required to make sure the installed PyTorch version is compatible with both PopTorch and PyTorch Lightning:
+
+```console
+python3 -m venv cnn-venv
+source cnn-venv/bin/activate
+pip3 install -U pip
+pip3 install <path-to-poptorch-wheel>.whl
+pip3 install -r requirements.txt --force-reinstall
+```
+
+Now enable the Poplar SDK:
+
+```console
+source <path-to-poplar-sdk>/popart-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
+source <path-to-poplar-sdk>/poplar-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
+```
+
 To run the CNN application using PyTorch Lightning:
 
 ```
 git submodule init
 git submodule update
-pip3 install ./examples/applications/pytorch/cnns/requirements.txt
+pip3 install -r ./examples/applications/pytorch/cnns/requirements.txt
 ```
 
 See the README.md in examples/applications/pytorch/cnns for full documentation, the
@@ -23,9 +41,8 @@ following run command and options are repeated here for ease of use.
 
 |IPU configuration|Model  | Config name| Note |
 |-------|----------|---------|---------|
-|Mk2 IPU-POD16|ResNet50| `resnet50_mk2_pipelined`| 4 pipeline stages, 4 replicas |
-|Mk2 IPU-POD16|ResNet50| `resnet50-16ipu-mk2-recompute`| single ipu, 16 replicas |
-|Mk2 IPU-POD16|EfficientNet-B0| `efficientnet-b0-16ipu-mk2`|4 pipeline stages, 4 replicas |
+|Mk2 IPU-POD16|ResNet50| `resnet50_mk2`| single ipu, 16 replicas |
+|Mk2 IPU-POD16|EfficientNet-B0| `efficientnet-b0-g16-gn-16ipu-mk2`|4 pipeline stages, 4 replicas |
 
 
 ```

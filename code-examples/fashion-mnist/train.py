@@ -134,7 +134,8 @@ class FashionMNIST(pl.LightningDataModule):
             options=self.options,
             shuffle=True,
             drop_last=True,
-            mode=poptorch.DataLoaderMode.Async
+            mode=poptorch.DataLoaderMode.Async,
+            num_workers=32
         )
 
     def val_dataloader(self):
@@ -143,7 +144,8 @@ class FashionMNIST(pl.LightningDataModule):
             batch_size=self.batchsize,
             options=self.options,
             drop_last=True,
-            mode=poptorch.DataLoaderMode.Async
+            mode=poptorch.DataLoaderMode.Async,
+            num_workers=32
         )
 
 if __name__ == '__main__':
@@ -177,7 +179,7 @@ if __name__ == '__main__':
     trainer = pl.Trainer(
         max_epochs=20,
         progress_bar_refresh_rate=20,
-        log_every_n_steps=10,
+        log_every_n_steps=1,
         plugins=IPUPlugin(inference_opts=options, training_opts=options)
     )
 
