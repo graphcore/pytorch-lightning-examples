@@ -13,7 +13,7 @@ python3 -m venv resnet18-venv
 source resnet18-venv/bin/activate
 pip3 install -U pip
 pip3 install <path-to-poptorch-wheel>.whl
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --force-reinstall
 ```
 
 Now enable the Poplar SDK:

@@ -2,7 +2,7 @@
 
 This directory contains a PyTorch Lightning port of the [PyTorch CNNs training application from the Graphcore GitHub examples repository](https://github.com/graphcore/examples/tree/master/applications/pytorch/cnns/train).
 
-It can be used to verify that the same performance is obtained with PyTorch Lightning as when running directly in PopTorch.
+It can be used to verify that the same performance is obtained with PyTorch Lightning as we do when running directly in PopTorch.
 
 First prepare your environment to run PyTorch Lightning on IPU.
 Note that `--force-reinstall` is required to make sure the installed PyTorch version is compatible with both PopTorch and PyTorch Lightning:
@@ -34,7 +34,7 @@ See the README.md in examples/applications/pytorch/cnns for full documentation, 
 following run command and options are repeated here for ease of use.
 
 ```
-       python3 train_lightning.py --data imagenet --imagenet-data-path <path-to/imagenet>
+       python3 train.py --data imagenet --imagenet-data-path <path-to/imagenet>
 ```
 
 #### ImageNet
@@ -46,7 +46,7 @@ following run command and options are repeated here for ease of use.
 
 
 ```
-python3 train_lightning.py --config <config name> --imagenet-data-path <path-to/imagenet>
+python3 train.py --config <config name> --imagenet-data-path <path-to/imagenet>
 ```
 
 ## Options

@@ -23,9 +23,11 @@ source <path-to-poplar-sdk>/poplar-ubuntu_18_04-2.4.0+2529-969064e2df/enable.sh
 ```
 
 ## Instructions
-Download the example Shakespeare text file from [the GitHub source](https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt) and name it as shakespeare.txt.
+Download the example Shakespeare text file from [the GitHub source](https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt) and name it as shakespeare.txt:
+    wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt -O shakespeare.txt
 
-First pip install -r requirements.txt. Then to train on the Shakespeare data run:
+
+Then train on the Shakespeare data run:
 
     python3 train.py
 
