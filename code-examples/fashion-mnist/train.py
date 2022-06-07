@@ -155,6 +155,14 @@ if __name__ == '__main__':
                         help='The ResNet model to use. Either \"ours\" or \"torchvision\"',
                         type=str,
                         default="ours")
+    parser.add_argument('--num-epochs',
+                        help="The number of epochs to train for.",
+                        type=int,
+                        default=20)
+    parser.add_argument('--ipus',
+                        help="How many IPUs to use in parallel while training.",
+                        type=int,
+                        default=8)
     args = parser.parse_args()
 
 
@@ -172,13 +180,13 @@ if __name__ == '__main__':
 
     options = poptorch.Options()
     options.deviceIterations(250)
-    options.replicationFactor(8)
+    options.replicationFactor(args.ipus)
 
     datamodule = FashionMNIST(options)
 
     trainer = pl.Trainer(
-        max_epochs=20,
-        progress_bar_refresh_rate=20,
+        max_epochs=args.num_epochs,
+        progress_bar_refresh_rate=args.num_epochs,
         log_every_n_steps=1,
         plugins=IPUPlugin(inference_opts=options, training_opts=options)
     )

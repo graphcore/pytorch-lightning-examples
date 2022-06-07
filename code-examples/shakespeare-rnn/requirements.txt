@@ -2,3 +2,4 @@ setuptools==58.0.4
 unidecode==1.2.0
 pytorch_lightning==1.4.9
 torch==1.10.0
+torchmetrics==0.6

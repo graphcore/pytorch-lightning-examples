@@ -48,7 +48,10 @@ if __name__ == '__main__':
     # dataloader will not automatically pull in the additional elements leading
     # to it pulling in batch_size/replication factor elements at a time.
     train_options.replicationFactor(8)
-    validation_options.replicationFactor(4)
+
+    # Replication of validation graph has been disabled for SDK 2.5.1, fix coming in SDK 2.6
+    # TODO: Uncomment after SDK 2.6 release
+    # validation_options.replicationFactor(4)
 
 
     # To avoid this we provide a poptorch.Dataloader class. This is almost the

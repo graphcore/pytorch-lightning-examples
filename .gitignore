@@ -1,0 +1,13 @@
+**/__pycache__
+*.pyc
+.cache
+FashionMNIST/
+code-examples/fashion-mnist/fashionmnist_data
+**/lightning_logs/
+*.ckpt
+shakespeare.txt
+*.log
+*.swp
+applications/chkpt/
+applications/ckpt/
+applications/logs/

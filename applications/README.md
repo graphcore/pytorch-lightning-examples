@@ -34,7 +34,7 @@ See the README.md in examples/applications/pytorch/cnns for full documentation, 
 following run command and options are repeated here for ease of use.
 
 ```
-       python3 train.py --data imagenet --imagenet-data-path <path-to/imagenet>
+       python3 train_lightning.py --data imagenet --imagenet-data-path <path-to/imagenet>
 ```
 
 #### ImageNet
@@ -46,7 +46,7 @@ following run command and options are repeated here for ease of use.
 
 
 ```
-python3 train.py --config <config name> --imagenet-data-path <path-to/imagenet>
+python3 train_lightning.py --config <config name> --imagenet-data-path <path-to/imagenet> [--checkpoint-path ./ckpt]
 ```
 
 ## Options
