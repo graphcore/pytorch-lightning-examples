@@ -2,7 +2,7 @@
 
 This repository contains a number of sample applications and tutorials specifically for the PyTorch Lightning IPU integration.
 
-The content of this repository requires Poplar SDK version 2.4 and PyTorch Lightning version 1.4.9.
+The content of this repository requires Poplar SDK version 2.5 and PyTorch Lightning version 1.4.9.
 
 Before running these examples, you need to install the Poplar SDK following the [Getting Started](https://docs.graphcore.ai/en/latest/getting-started.html) guide for your IPU system. Make sure to source the enable.sh scripts for Poplar and PopART. We recommend that you install PopTorch in a Python virtualenv.
 
