@@ -1,6 +1,6 @@
 # PyTorch CNN application
 
-This directory contains a PyTorch Lightning port of the [PyTorch CNNs training application from the Graphcore GitHub examples repository](https://github.com/graphcore/examples/tree/master/applications/pytorch/cnns/train).
+This directory contains a PyTorch Lightning port of the [PyTorch CNNs training application from the Graphcore GitHub examples repository](https://github.com/graphcore/examples/tree/master/vision/cnns/pytorch/train).
 
 It can be used to verify that the same performance is obtained with PyTorch Lightning as we do when running directly in PopTorch.
 
@@ -27,10 +27,10 @@ To run the CNN application using PyTorch Lightning:
 ```
 git submodule init
 git submodule update
-pip3 install -r ./examples/applications/pytorch/cnns/requirements.txt
+pip3 install -r ./examples/vision/cnns/pytorch/requirements.txt
 ```
 
-See the README.md in examples/applications/pytorch/cnns for full documentation, the
+See the README.md in examples/vision/cnns/pytorch/ for full documentation, the
 following run command and options are repeated here for ease of use.
 
 ```

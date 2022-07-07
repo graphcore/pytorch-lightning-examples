@@ -12,4 +12,4 @@ We have three categories of examples.
 * [code-examples](code-examples/) Contains two examples showing Lightning/PopTorch integration.
     * [shakespeare-rnn](code-examples/shakespeare-rnn) A port of an existing PyTorch RNN to run on IPU through Lightning.
     * [fashion-mnist](code-examples/fashion-mnist) Runs two different ResNets, one a modified torchvision backbone the other written from scratch
-* [applications](applications) A port of the [Convolutional Neural Network training application](https://github.com/graphcore/examples/tree/master/applications/pytorch/cnns/train) from Graphcore's [examples](https://github.com/graphcore/examples) repo using Lightning. This can be used to run, and benchmark, many CNN examples.
+* [applications](applications) A port of the [Convolutional Neural Network training application](https://github.com/graphcore/examples/tree/master/vision/cnns/pytorch/train) from Graphcore's [examples](https://github.com/graphcore/examples) repo using Lightning. This can be used to run, and benchmark, many CNN examples.

@@ -16,12 +16,12 @@ import sys
 import os
 
 
-if not os.path.exists('examples/applications/pytorch/cnns/train'):
+if not os.path.exists('examples/vision/cnns/pytorch/train'):
     print("Could not find the CNN examples directory, have you run git submodule init/update?")
     exit()
 
-sys.path.append('examples/applications/pytorch/cnns/')
-sys.path.append('examples/applications/pytorch/cnns/train')
+sys.path.append('examples/vision/cnns/pytorch/')
+sys.path.append('examples/vision/cnns/pytorch/train')
 
 from train_utils import parse_arguments
 from validate import create_validation_opts

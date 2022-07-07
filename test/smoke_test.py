@@ -16,7 +16,7 @@ class ApplicationsTest(SubProcessChecker):
         self.run_command("git submodule init", self.current_path, [])
         self.run_command("git submodule update", self.current_path, [])
         self.run_command(
-            "pip3 install -r ./examples/applications/pytorch/cnns/requirements.txt", self.current_path, [])
+            "pip3 install -r ./examples/vision/cnns/pytorch/requirements.txt", self.current_path, [])
 
     @pytest.mark.category2
     @pytest.mark.ipus(16)
